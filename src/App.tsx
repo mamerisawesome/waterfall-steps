@@ -8,7 +8,6 @@ import themes, { FontStack } from "./theme";
 import { Layout } from "./components/Layout";
 import { ThemeToggleProvider } from "./contexts/themeToggle";
 import { StepProvider } from "./contexts/step";
-import { Sandbox } from "./pages/Sandbox";
 import { Stepper } from "./pages/Stepper";
 
 const GlobalStyle: GlobalStyleComponent<any, any> = createGlobalStyle`
@@ -82,7 +81,6 @@ const App = () => {
         <GlobalStyle />
         <FontStack />
         <Layout>
-          <Sandbox />
           <StepProvider state={{currentStep: 0, maxStep: 3}}>
             <Stepper />
           </StepProvider>
