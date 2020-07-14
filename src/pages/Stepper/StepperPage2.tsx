@@ -23,7 +23,7 @@ type Page2Props = (
 const getInputsSummation = (data: number[]|undefined[]) => {
   let areNumbers = true;
   for (let idx = 0; idx < data.length; idx += 1) {
-    if (!data[idx]) {
+    if (typeof data[idx] !== "number") {
       areNumbers = false;
       break;
     }
