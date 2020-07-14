@@ -42,6 +42,10 @@ const Page2Component: Page2Props = ({ className }) => {
   }, [inputVals, step.parts, handleGetSummation]);
 
   if (step.currentStep !== 2) {
+    if (inputVals.length) {
+      setInputVals([]);
+      setIsValid(false);
+    }
     return null;
   }
 

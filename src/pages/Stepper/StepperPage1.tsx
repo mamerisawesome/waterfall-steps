@@ -23,7 +23,7 @@ const Page1Component: Page1Props = ({ className }) => {
   const { step, dispatch } = useContext(StepContext);
   const [parts, setParts] = useState<string>("");
 
-  useEffect(() => {
+  useEffect((): void => {
     if (step.parts) {
       setParts(step.parts ? step.parts.toString() : "");
     }
