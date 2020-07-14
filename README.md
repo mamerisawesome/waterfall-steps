@@ -1,14 +1,14 @@
-# Waterfall Steps App
+# Waterfall Steps App 🌊
 
 Simple Web Application that renders pages by steps.
 
-## Stack
+## 📚 Stack
 
 * React
 * TypeScript
 * Styled components
 
-## Local
+## 🔨 Local
 
 ### Setup
 
@@ -28,7 +28,7 @@ yarn start
 yarn test
 ```
 
-## Design Choices
+## 🖌 Design Choices
 
 ### Color
 
