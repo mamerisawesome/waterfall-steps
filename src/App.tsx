@@ -23,7 +23,7 @@ const GlobalStyle: GlobalStyleComponent<any, any> = createGlobalStyle`
     padding: 0;
   }
   main {
-    min-height: ${window.innerHeight-144}px;
+    min-height: ${window.innerHeight-155}px;
     width: 100%;
     position: relative;
     display: flex;

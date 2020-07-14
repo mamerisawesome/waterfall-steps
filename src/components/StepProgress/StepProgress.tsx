@@ -9,6 +9,9 @@ type StepProgressComponentProps = FC<{
 const CircleDimension = 65;
 const StyledCircle = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   float: left;
   background-image: linear-gradient(
     to bottom right,
@@ -16,8 +19,6 @@ const StyledCircle = styled.div`
     ${props => props.theme.colors.accent[4]}
   );
   border-radius: ${CircleDimension/2}px;
-  height: ${CircleDimension}px;
-  width: ${CircleDimension}px;
   margin: 0;
   &.active {
     background-image: linear-gradient(
@@ -42,11 +43,8 @@ const StyledCircle = styled.div`
   }
   & span {
     position: relative;
-    font-size: ${props => props.theme.fontSizes[3]};
     font-weight: ${props => props.theme.fontWeights.bold};
     color: ${props => props.theme.colors.gray[0]};
-    top: ${CircleDimension/3.75}px;
-    left: ${CircleDimension/2.75}px;
     display: inline;
     float: none;
   }
@@ -54,10 +52,7 @@ const StyledCircle = styled.div`
 
 const LineConnector = styled.div`
   width: 100px;
-  border-bottom: 1px solid black;
-  margin-top: ${CircleDimension/2}px;
-  margin-left: ${CircleDimension*1.15}px;
-  margin-right: ${CircleDimension/6}px;
+  border-bottom: 2px solid black;
 `;
 
 const StepProgressComponent: (StepProgressComponentProps|null) = ({
@@ -75,6 +70,7 @@ const StepProgressComponent: (StepProgressComponentProps|null) = ({
         <div key={id}>
           <StyledCircle
             className={[
+              "step-number",
               (page+1) === step.currentStep ? "active" : "",
               (page+1) > step.currentStep ? "disabled" : "",
             ].join(" ")}
@@ -82,7 +78,7 @@ const StepProgressComponent: (StepProgressComponentProps|null) = ({
             <span>{page+1}</span>
           </StyledCircle>
           {id + 1 !== step.maxStep &&
-            <LineConnector />
+            <LineConnector className="step-connector" />
           }
         </div>
       ))}
@@ -97,4 +93,46 @@ export const StepProgress = styled(StepProgressComponent)`
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  @media only screen and (max-width: 599px) {
+    & div.step-number {
+      height: ${CircleDimension/2}px;
+      width: ${CircleDimension/2}px;
+      & span {
+        font-size: ${props => props.theme.fontSizes[0]};
+      }
+    }
+    & div.step-connector {
+      margin-top: ${CircleDimension/4}px;
+      margin-left: ${CircleDimension-(CircleDimension*0.475)}px;
+      margin-right: ${CircleDimension-(CircleDimension*0.98)}px;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    & div.step-number {
+      height: ${CircleDimension/1.5}px;
+      width: ${CircleDimension/1.5}px;
+      & span {
+        font-size: ${props => props.theme.fontSizes[1]};
+      }
+    }
+    & div.step-connector {
+      margin-top: ${CircleDimension/3}px;
+      margin-left: ${CircleDimension-(CircleDimension*0.325)}px;
+      margin-right: ${CircleDimension-(CircleDimension*0.98)}px;
+    }
+  }
+  @media only screen and (min-width: 720px) {
+    & div.step-number {
+      height: ${CircleDimension}px;
+      width: ${CircleDimension}px;
+      & span {
+        font-size: ${props => props.theme.fontSizes[3]};
+      }
+    }
+    & div.step-connector {
+      margin-top: ${CircleDimension/2}px;
+      margin-left: ${CircleDimension*1.15}px;
+      margin-right: ${CircleDimension/6}px;
+    }
+  }
 `;

@@ -24,4 +24,18 @@ const Page0Component: Page0Props = ({ className }) => {
   );
 };
 
-export const Page0 = styled(Page0Component)``;
+export const Page0 = styled(Page0Component)`
+  & button {
+    width: 200px;
+    height: 100px;
+    font-size: 25px;
+    background-color: ${props => props.theme.colors.accent[4]};
+      color: ${props => props.theme.colors.gray[0]};
+      &:hover {
+        background-color: ${props => props.theme.colors.accent[5]};
+      }
+      &:active {
+        background-color: ${props => props.theme.colors.accent[3]};
+      }
+  }
+`;

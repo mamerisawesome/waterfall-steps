@@ -11,7 +11,7 @@ const generateButtonComponent = (
   type: string,
 ): StyledComponent<ButtonComponentProps, {}> => {
   return styled(ButtonComponent)`
-    height: 32px;
+    min-height: 32px;
     min-width: 100px;
     margin: 10px 10px;
     border: 1px;
@@ -21,6 +21,7 @@ const generateButtonComponent = (
     overflow: hidden;
     cursor: pointer;
     ${props => css`
+      font-family: ${props.theme.fonts.span.families};
       box-shadow: ${props.theme.shadows[4]};
       background-color: ${props.theme.buttons[type].bg};
       color: ${props.theme.buttons[type].fg};
