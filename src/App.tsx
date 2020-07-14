@@ -50,10 +50,6 @@ const GlobalStyle: GlobalStyleComponent<any, any> = createGlobalStyle`
       padding-left: 80px;
       padding-right: 80px;
     }
-    main {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
     footer {
       padding-left: 80px;
       padding-right: 80px;
@@ -63,10 +59,6 @@ const GlobalStyle: GlobalStyleComponent<any, any> = createGlobalStyle`
     header {
       padding-left: 200px;
       padding-right: 200px;
-    }
-    main {
-      padding-left: 20px;
-      padding-right: 20px;
     }
     footer {
       padding-left: 200px;
