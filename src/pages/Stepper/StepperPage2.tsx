@@ -8,7 +8,12 @@ import React, {
 } from "react";
 import StepContext from "../../contexts/step";
 import styled from "styled-components";
-import { Input, Button } from "../../components/htmlAtoms";
+import {
+  Input,
+  Button,
+  Title,
+  Text,
+} from "../../components/htmlAtoms";
 
 type Page2Props = (
   FC<{ className?: string }>
@@ -50,6 +55,10 @@ const Page2Component: Page2Props = ({ className }) => {
 
   return (
     <div className={className}>
+      <Title.H3>
+        Summation of Parts
+      </Title.H3>
+      <Text.Paragraph>For each box, input a number from 0 to 100. For you to proceed, the summation of all boxes should be 100. All boxes should have an input to proceed.</Text.Paragraph>
       <div>
         {Array.from(Array(step.parts).keys()).map((part, id) => (
           <Input.Number

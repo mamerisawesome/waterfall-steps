@@ -18,6 +18,7 @@ const Page3Component: Page3Props = ({ className }) => {
   return (
     <div className={className}>
       <Title.H1>Success!</Title.H1>
+      <Title.H3>Congratulations! You've completed all necessary inputs. Click the home button to re-experience.</Title.H3>
       <Button.Success onClick={() => {dispatch({type: "reset"})}}>
         Home
       </Button.Success>

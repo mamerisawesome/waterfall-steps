@@ -7,7 +7,12 @@ import React, {
 } from "react";
 import StepContext from "../../contexts/step";
 import styled from "styled-components";
-import { Input, Button } from "../../components/htmlAtoms";
+import {
+  Input,
+  Button,
+  Title,
+  Text,
+} from "../../components/htmlAtoms";
 
 type Page1Props = (
   FC<{ className?: string }>
@@ -33,6 +38,10 @@ const Page1Component: Page1Props = ({ className }) => {
 
   return (
     <div className={className}>
+      <Title.H3>
+        Number of Parts
+      </Title.H3>
+      <Text.Paragraph>Your input here will define the number of inputs you'll generate on the next page.</Text.Paragraph>
       <Input.Number
         label="Number of parts"
         value={parts}
