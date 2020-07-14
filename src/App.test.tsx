@@ -10,7 +10,7 @@ test("renders home button", () => {
 
 test("render header", () => {
   const { getByText } = render(<App />);
-  const headerText = getByText("Monty Hall");
+  const headerText = getByText("Waterfall Steps");
   expect(headerText).toBeInTheDocument();
   expect(headerText).toHaveStyle("color: #141414");
   const toggleThemeButton = getByText("⚙");
@@ -19,7 +19,7 @@ test("render header", () => {
 
 test("toggle header theme color", () => {
   const { getByText } = render(<App />);
-  const headerText = getByText("Monty Hall");
+  const headerText = getByText("Waterfall Steps");
   getByText("⚙").click();
   expect(headerText).toHaveStyle("color: #f1f1f1");
 });

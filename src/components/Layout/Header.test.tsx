@@ -10,7 +10,7 @@ test("renders bright header", () => {
       <Header />
     </ThemeProvider>
   );
-  const headerText = getByText("Monty Hall");
+  const headerText = getByText("Waterfall Steps");
   expect(headerText).toBeInTheDocument();
   expect(headerText).toHaveStyle("color: #141414");
   const toggleButton = getByText("⚙");
@@ -24,7 +24,7 @@ test("renders dark header", () => {
       <Header />
     </ThemeProvider>
   );
-  const headerText = getByText("Monty Hall");
+  const headerText = getByText("Waterfall Steps");
   expect(headerText).toBeInTheDocument();
   expect(headerText).toHaveStyle("color: #f1f1f1");
   const toggleButton = getByText("⚙");

@@ -27,7 +27,7 @@ const HeaderComponent: FC<{className?: string}> = ({
   const themeToggle = useContext(ThemeToggleContext);
   return (
     <header className={className}>
-      <Text.Span>Monty Hall</Text.Span>
+      <Text.Span>Waterfall Steps</Text.Span>
       <StyledThemeToggle onClick={(): void => {themeToggle()}}>
         ⚙
       </StyledThemeToggle>

@@ -1,4 +1,4 @@
-# Monty Hall App
+# Waterfall Steps App
 
 Simple Web Application that renders pages by steps.
 
